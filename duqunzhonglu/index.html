@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="读群众路线心得体会专题，提供关于党的群众路线理论解读、学习心得分享及实践感悟文章，帮助党员干部深入理解全心全意为人民服务的宗旨。">
+    <meta name="keywords" content="读群众路线心得体会,群众路线学习,党的群众路线,为人民服务,党员干部">
+    <title>读群众路线心得体会-党的群众路线理论解读与实践感悟</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c6491;
+            --secondary-color: #4a90e2;
+            --accent-color: #e63946;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --spacing-unit: 1.5rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: normal;
+            margin-left: 10px;
+        }
+
+        /* Article Grid */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img-placeholder {
+            height: 180px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #adb5bd;
+            font-size: 3rem;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            background-color: rgba(74, 144, 226, 0.1);
+            color: var(--secondary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            align-self: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Sidebar Layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            color: var(--text-color);
+        }
+
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-link {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 85%;
+        }
+
+        .list-date {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: #eef4fa;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 40px 0;
+            border: 1px solid #dbeafe;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .quote-author {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        /* Utility */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background-color: #1a4f75;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            群众路线学习网 <span>—— 学习心得与理论解读</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">心得体会</a></li>
+                <li><a href="#">理论解读</a></li>
+                <li><a href="#">典型案例</a></li>
+                <li><a href="#">资料下载</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>读群众路线心得体会</h1>
+            <p>深入贯彻党的群众路线，坚持全心全意为人民服务的根本宗旨，在学习中感悟，在实践中提升。</p>
+        </div>
+    </section>
+
+    <div class="container content-wrapper">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            
+            <!-- Featured Article -->
+            <article style="margin-bottom: 40px;">
+                <div class="article-card" style="flex-direction: row; overflow: visible;">
+                    <div class="card-img-placeholder" style="width: 300px; min-height: 200px; background: linear-gradient(45deg, #2c6491, #4a90e2);">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">重点推荐</span>
+                        <h2 class="card-title"><a href="#">深刻理解群众路线的核心要义与实践路径</a></h2>
+                        <p class="card-excerpt">通过阅读《关于新形势下党内政治生活的若干准则》等文献，结合自身工作实际，我对党的群众路线有了更深层次的认识。本文将从理论根源、历史逻辑和实践要求三个维度，详细阐述如何在实际工作中践行群众路线。</p>
+                        <div class="card-meta">
+                            <span>2023-10-24</span>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Section: Latest Readings -->
+            <section>
+                <div class="section-title">
+                    最新心得体会
+                    <span>更新于 2023年</span>
+                </div>
+                <div class="article-grid">
+                    <article class="article-card">
+                        <div class="card-img-placeholder">📖</div>
+                        <div class="card-body">
+                            <span class="card-tag">基层工作</span>
+                            <h3 class="card-title"><a href="#">在基层服务中践行群众路线的几点感悟</a></h3>
+                            <p class="card-excerpt">深入田间地头，倾听群众呼声，是做好基层工作的关键。本文记录了我在下乡调研过程中的真实所见所闻。</p>
+                            <div class="card-meta">
+                                <span>2023-10-20</span>
+                                <a href="#" class="read-more">阅读 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="card-img-placeholder">🤝</div>
+                        <div class="card-body">
+                            <span class="card-tag">作风建设</span>
+                            <h3 class="card-title"><a href="#">如何克服形式主义，密切联系群众</a></h3>
+                            <p class="card-excerpt">形式主义是党的事业的大敌。通过学习相关案例，分析了形式主义的危害，并提出了改进作风的具体建议。</p>
+                            <div class="card-meta">
+                                <span>2023-10-18</span>
+                                <a href="#" class="read-more">阅读 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="card-img-placeholder">💡</div>
+                        <div class="card-body">
+                            <span class="card-tag">工作方法</span>
+                            <h3 class="card-title"><a href="#">创新群众工作方法，提升服务效能</a></h3>
+                            <p class="card-excerpt">随着互联网技术的发展，传统的群众工作方式面临挑战。本文探讨了如何利用新媒体平台更好地服务群众。</p>
+                            <div class="card-meta">
+                                <span>2023-10-15</span>
+                                <a href="#" class="read-more">阅读 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="card-img-placeholder">🛡️</div>
+                        <div class="card-body">
+                            <span class="card-tag">廉政建设</span>
+                            <h3 class="card-title"><a href="#">筑牢思想防线，永葆公仆本色</a></h3>
+                            <p class="card-excerpt">坚持群众路线必须以廉洁自律为前提。深刻反思历史教训，强调党员干部必须时刻保持清醒头脑。</p>
+                            <div class="card-meta">
+                                <span>2023-10-12</span>
+                                <a href="#" class="read-more">阅读 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Quote Block -->
+            <div class="quote-section">
+                <p class="quote-text">“人民对美好生活的向往，就是我们的奋斗目标。”</p>
+                <p class="quote-author">—— 习近平</p>
+            </div>
+
+            <!-- Section: Analysis & Guidance -->
+            <section>
+                <div class="section-title">
+                    理论导读与写作指南
+                    <span>助您提升写作水平</span>
+                </div>
+                <div class="article-grid">
+                    <article class="article-card">
+                        <div class="card-body">
+                            <span class="card-tag">写作技巧</span>
+                            <h3 class="card-title"><a href="#">写好群众路线心得体会的四个要点</a></h3>
+                            <p class="card-excerpt">心得体会不同于理论文章，重在“体会”。本文从联系实际、剖析自我、提出建议三个方面提供写作思路。</p>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="card-body">
+                            <span class="card-tag">理论背景</span>
+                            <h3 class="card-title"><a href="#">群众路线的历史演进与时代价值</a></h3>
+                            <p class="card-excerpt">回顾党在各个历史时期坚持群众路线的光辉历程，分析其在新时代背景下的重要意义。</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门分类</h3>
+                <ul style="list-style: none;">
+                    <li class="list-item"><a href="#" class="list-link">领导干部心得</a></li>
+                    <li class="list-item"><a href="#" class="list-link">基层党员感悟</a></li>
+                    <li class="list-item"><a href="#" class="list-link">青年干部成长</a></li>
+                    <li class="list-item"><a href="#" class="list-link">窗口服务感悟</a></li>
+                    <li class="list-item"><a href="#" class="list-link">驻村帮扶记录</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门文章</h3>
+                <div class="list-item">
+                    <a href="#" class="list-link">从“半条被子”看党群关系</a>
+                    <span class="list-date">10-22</span>
+                </div>
+                <div class="list-item">
+                    <a href="#" class="list-link">如何解决群众“急难愁盼”问题</a>
+                    <span class="list-date">10-20</span>
+                </div>
+                <div class="list-item">
+                    <a href="#" class="list-link">密切联系群众的几点思考</a>
+                    <span class="list-date">10-18</span>
+                </div>
+                <div class="list-item">
+                    <a href="#" class="list-link">树立正确政绩观的实践路径</a>
+                    <span class="list-date">10-15</span>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">资料下载</h3>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">精选学习资料合集</p>
+                <a href="#" class="btn" style="width: 100%; text-align: center;">下载学习大纲 PDF</a>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>群众路线学习网</h3>
+                <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.6;">
+                    专注于党的群众路线理论研究、心得体会分享与实践案例展示，致力于打造党员干部学习的优质平台。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>相关主题</h3>
+                <ul>
+                    <li><a href="#">不忘初心牢记使命</a></li>
+                    <li><a href="#">两学一做</a></li>
+                    <li><a href="#">党史学习教育</a></li>
+                    <li><a href="#">作风建设永远在路上</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 群众路线学习网 版权所有 | 本站内容仅供学习交流使用</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+              </html>
