@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="亨特儿童家具官网提供高品质儿童床、书桌、储物柜等家具产品。专注安全环保材质，呵护儿童健康成长，打造舒适温馨的成长空间。">
+    <meta name="keywords" content="亨特儿童家具,儿童床,儿童书桌,环保家具,儿童房设计">
+    <title>亨特儿童家具-安全环保的成长空间设计专家</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #50E3C2;
+            --accent-color: #FF6B6B;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #F9FAFB;
+            --white: #FFFFFF;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #357ABD;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #E3F2FD 0%, #FFFFFF 100%);
+            padding: 4rem 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-hover);
+            width: 100%;
+            height: auto;
+        }
+
+        /* Features */
+        .features {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #E3F2FD;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Products Showcase */
+        .products {
+            padding: 4rem 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-image {
+            height: 220px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .product-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .buy-btn {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--text-main);
+            color: var(--white);
+            border-radius: 4px;
+        }
+
+        /* Design Guide Section */
+        .guide {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .guide-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .guide-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-steps {
+            margin-top: 2rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .step-text p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .guide-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+            background-color: var(--bg-light);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            max-height: 200px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-actions {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                margin: 0 auto 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">亨特<span>儿童家具</span></a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#products">热门产品</a></li>
+                    <li><a href="#features">安全材质</a></li>
+                    <li><a href="#guide">选购指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">免费咨询</a>
+            </div>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>为成长打造安全温馨的空间</h1>
+                    <p>亨特儿童家具采用环保板材与圆润设计，专注于为0-12岁儿童打造健康、舒适、富有创意的成长环境。</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#products" class="btn btn-primary">浏览全系列</a>
+                        <a href="#guide" class="btn btn-outline">查看设计指南</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/childrenfurniture/600/400" alt="温馨儿童房展示">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择亨特？</h2>
+                    <p>严苛的品控标准，只为给孩子最好的</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🌿</div>
+                        <h3>环保E0级板材</h3>
+                        <p>所有家具均采用进口E0级环保板材，甲醛释放量远低于国家标准，守护儿童呼吸健康。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>圆角防撞设计</h3>
+                        <p>细节处体现关怀，所有棱角经过精密打磨处理，有效避免儿童磕碰受伤，安全无忧。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">📐</div>
+                        <h3>科学人体工学</h3>
+                        <p>符合儿童成长规律设计，从婴儿床到书桌椅，科学调节高度，保护视力与脊柱发育。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>多元色彩搭配</h3>
+                        <p>提供多款经典色系与莫兰迪色系，不仅美观，更能激发儿童的色彩感知与创造力。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-title">
+                    <h2>明星产品系列</h2>
+                    <p>从睡眠到学习，一站式满足成长需求</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/kidsbed/400/300" alt="多功能儿童床">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">睡眠系列</span>
+                            <h3 class="product-title">亨特云朵多功能儿童床</h3>
+                            <p class="product-desc">可升降床架，下方附带储物抽屉，释放卧室空间，陪伴孩子度过童年时光。</p>
+                            <div class="product-footer">
+                                <span class="price">¥2,899</span>
+                                <a href="#" class="buy-btn">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/kidstool/400/300" alt="护脊学习桌">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">学习系列</span>
+                            <h3 class="product-title">亨特护脊升降学习桌</h3>
+                            <p class="product-desc">随身高调节桌板高度，搭配护眼台灯，帮助孩子养成正确的坐姿习惯。</p>
+                            <div class="product-footer">
+                                <span class="price">¥1,599</span>
+                                <a href="#" class="buy-btn">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/closet/400/300" alt="衣柜">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">收纳系列</span>
+                            <h3 class="product-title">亨特田园风三门衣柜</h3>
+                            <p class="product-desc">开放式挂衣区与封闭式收纳区结合，耐磨清漆表面，易于打理。</p>
+                            <div class="product-footer">
+                                <span class="price">¥3,299</span>
+                                <a href="#" class="buy-btn">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/chair/400/300" alt="儿童椅">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">配件系列</span>
+                            <h3 class="product-title">亨特圆弧儿童餐椅</h3>
+                            <p class="product-desc">轻便易收纳，安全卡扣设计，让孩子从小养成独立用餐的好习惯。</p>
+                            <div class="product-footer">
+                                <span class="price">¥459</span>
+                                <a href="#" class="buy-btn">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#" class="btn btn-outline">查看更多产品</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Guide Section -->
+        <section id="guide" class="guide">
+            <div class="container">
+                <div class="guide-container">
+                    <div class="guide-image">
+                        <img src="https://picsum.photos/seed/kidsroomdesign/600/400" alt="儿童房设计灵感">
+                    </div>
+                    <div class="guide-content">
+                        <h2>儿童房空间规划指南</h2>
+                        <p>科学规划儿童房，不仅能提高空间利用率，更能激发孩子的想象力。以下是我们为您整理的几个关键点：</p>
+                        <div class="guide-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <h4>功能分区明确</h4>
+                                    <p>建议将睡眠区、学习区、娱乐区和储物区进行合理划分，避免动静干扰。</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <h4>安全第一原则</h4>
+                                    <p>选择稳固的家具结构，避免尖锐边角，确保家具固定牢固，防止倾倒。</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <h4>采光与通风</h4>
+                                    <p>尽量将书桌和床放置在采光良好的位置，保持室内空气流通，有利于身心健康。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于亨特儿童家具的选购与使用</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">亨特家具的甲醛释放量标准是多少？ <span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">我们所有产品均符合国家E0级环保标准，部分系列达到ENF级（无醛添加级），确保对儿童健康无害。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">产品安装是否复杂？ <span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">大多数产品（如书桌、餐椅）支持简易组装，随箱附赠详细说明书和安装工具。大型家具（如床、衣柜）我们提供专业的上门安装服务。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">能否定制颜色或尺寸？ <span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">亨特儿童家具提供多种标准配色，部分产品支持尺寸定制。您可以在官网咨询客服或到线下门店体验。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>亨特儿童家具</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.8;">
+                        致力于为全球家庭提供高品质、安全、环保的儿童家具解决方案。让每一个孩子都能在舒适的环境中健康成长。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品系列</h4>
+                    <ul>
+                        <li><a href="#">儿童床</a></li>
+                        <li><a href="#">学习桌椅</a></li>
+                        <li><a href="#">储物柜</a></li>
+                        <li><a href="#">软包家具</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>客户服务</h4>
+                    <ul>
+                        <li><a href="#">售后服务政策</a></li>
+                        <li><a href="#">安装指南</a></li>
+                        <li><a href="#">退换货流程</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：service@hunterkids.com</li>
+                        <li>地址：中国·上海市浦东新区家居大道888号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 亨特儿童家具 版权所有 | 沪ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+                          </html>
