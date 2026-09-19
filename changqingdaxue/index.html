@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="长清大学城综合服务平台，提供高校导航、周边生活指南、美食推荐、交通出行及校园资讯。一站式了解长清大学城各大学校位置、食堂攻略与周末去处。">
+    <meta name="keywords" content="长清大学城, 济南大学城, 山东大学, 山东师范大学, 青岛科技大学, 大学城美食, 大学城地图, 济南高校">
+    <title>长清大学城-高校导航、生活指南与周边服务</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f39c12;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+
+        .nav-cta:hover {
+            background-color: #004494;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .search-bar {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-bar button {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Main Content Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr 280px;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Sidebar Left */
+        .sidebar-left {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-light);
+            color: var(--primary-color);
+        }
+
+        .school-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .school-list li:last-child {
+            border-bottom: none;
+        }
+
+        .school-list a {
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .school-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .school-list .badge {
+            font-size: 12px;
+            background: #eef2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--text-light);
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Section Styling */
+        .section-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-header h2::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 20px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Grid for Cards */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 12px;
+            color: var(--primary-color);
+            background: #eef6ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            padding-top: 10px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar Right */
+        .sidebar-right {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .hot-list li {
+            padding: 12px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hot-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hot-num {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            line-height: 1;
+            min-width: 20px;
+        }
+
+        .hot-link {
+            font-size: 14px;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .hot-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Map Placeholder */
+        .map-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #e9ecef;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z" fill="%23dee2e6" opacity="0.5"/></svg>');
+            background-size: cover;
+            position: relative;
+        }
+        
+        .map-placeholder::after {
+            content: "大学城全景地图预览区域";
+            position: absolute;
+            background: rgba(255,255,255,0.9);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar-left, .sidebar-right {
+                display: none; /* Simplify for tablet/mobile */
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .grid-3, .grid-4 {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            nav ul {
+                gap: 15px;
+                margin-top: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero {
+                padding: 50px 0;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10v6"></path>
+                    <path d="M20 10a2 2 0 0 0-2-2v-4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v4a2 2 0 0 0-2 2"></path>
+                    <path d="M12 2a2 2 0 0 1 2 2v4"></path>
+                    <path d="M4 16v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"></path>
+                </svg>
+                <span>长清大学城</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#schools">高校导航</a></li>
+                    <li><a href="#life">生活指南</a></li>
+                    <li><a href="#map">交通地图</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="nav-cta">联系合作</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>探索济南长清大学城</h1>
+            <p>汇集山东大学、山东师范大学等十余所高校资源，为您提供最全的校园周边生活服务、美食地图与交通出行指南。</p>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索高校、美食、商家或地址...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container main-grid">
+        <!-- 左侧栏：高校导航 -->
+        <aside class="sidebar-left" id="schools">
+            <h3 class="sidebar-title">高校分布</h3>
+            <ul class="school-list">
+                <li><a href="#">山东大学（中心校区）</a> <span class="badge">综合</span></li>
+                <li><a href="#">山东师范大学</a> <span class="badge">师范</span></li>
+                <li><a href="#">山东中医药大学</a> <span class="badge">医药</span></li>
+                <li><a href="#">济南大学</a> <span class="badge">理工</span></li>
+                <li><a href="#">山东工艺美术学院</a> <span class="badge">艺术</span></li>
+                <li><a href="#">山东交通学院</a> <span class="badge">交通</span></li>
+                <li><a href="#">青岛理工大学</a> <span class="badge">理工</span></li>
+                <li><a href="#">山东女子学院</a> <span class="badge">综合</span></li>
+                <li><a href="#">山东艺术学院</a> <span class="badge">艺术</span></li>
+                <li><a href="#">山东科学大学</a> <span class="badge">理工</span></li>
+            </ul>
+        </aside>
+
+        <!-- 中间内容区 -->
+        <main class="content-area">
+            
+            <!-- 推荐美食 -->
+            <section class="section-card">
+                <div class="section-header">
+                    <h2>大学城热门美食</h2>
+                    <a href="#" style="font-size: 14px; color: var(--primary-color);">查看更多 &rarr;</a>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/food1/400/300" alt="大学城烧烤" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">夜宵首选</span>
+                            <h3 class="card-title">长清大学城后街烧烤一条街</h3>
+                            <p class="card-desc">汇集了各式烧烤、炒菜与啤酒，是大学生周末聚会的不二之选，性价比极高。</p>
+                            <div class="card-footer">
+                                <span>约20条街道</span>
+                                <span>人均 50元</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/food2/400/300" alt="麻辣烫" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">日常餐饮</span>
+                            <h3 class="card-title">大学城特色麻辣烫</h3>
+                            <p class="card-desc">汤底浓郁，食材新鲜，多种汤底可选，适合不想吃重口味时的健康选择。</p>
+                            <div class="card-footer">
+                                <span>多家分店</span>
+                                <span>人均 15元</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/food3/400/300" alt="快餐" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">快捷便利</span>
+                            <h3 class="card-title">大学城连锁快餐</h3>
+                            <p class="card-desc">提供中西式简餐、汉堡、盖饭等，营业时间长，是赶课学生和加班人的好帮手。</p>
+                            <div class="card-footer">
+                                <span>24小时营业</span>
+                                <span>人均 25元</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 资讯与活动 -->
+            <section class="section-card">
+                <div class="section-header">
+                    <h2>校园生活与资讯</h2>
+                </div>
+                <div class="grid-4">
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="card-tag">交通</span>
+                            <h3 class="card-title">大学城地铁开通最新消息</h3>
+                            <p class="card-desc">地铁R1号线与R2号线交汇，长清大学城出行更加便捷，详细线路图解读。</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="card-tag">兼职</span>
+                            <h3 class="card-title">2024年大学生兼职招聘会</h3>
+                            <p class="card-desc">汇总了周边商场、超市及家教中心的兼职信息，提供安全可靠的兼职渠道。</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="card-tag">快递</span>
+                            <h3 class="card-title">大学城快递网点分布</h3>
+                            <p class="card-desc">全面整理了顺丰、中通、韵达等主要快递在长清大学城的营业网点及营业时间。</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="card-tag">演出</span>
+                            <h3 class="card-title">山东艺术学院毕业季展演</h3>
+                            <p class="card-desc">关注长清大学城高校艺术资源，获取免费或低价的戏剧、音乐会门票信息。</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 地图预览 -->
+            <section class="section-card" id="map">
+                <div class="section-header">
+                    <h2>大学城全景地图</h2>
+                </div>
+                <div class="map-placeholder">
+                    <!-- Map Placeholder visual -->
+                </div>
+                <p style="margin-top: 15px; font-size: 14px; color: #666;">* 此处展示长清大学城核心区域地图，包含高校、商圈、公交站及主要道路。</p>
+            </section>
+
+        </main>
+
+        <!-- 右侧栏：热门推荐 -->
+        <aside class="sidebar-right">
+            <h3 class="sidebar-title">热门榜单</h3>
+            <ul class="hot-list">
+                <li>
+                    <span class="hot-num">01</span>
+                    <a href="#" class="hot-link">山东大学中心校区图书馆预约</a>
+                </li>
+                <li>
+                    <span class="hot-num">02</span>
+                    <a href="#" class="hot-link">大学城万达广场停车攻略</a>
+                </li>
+                <li>
+                    <span class="hot-num">03</span>
+                    <a href="#" class="hot-link">长清大学城租房避坑指南</a>
+                </li>
+                <li>
+                    <span class="hot-num">04</span>
+                    <a href="#" class="hot-link">长清湖公园夜跑路线推荐</a>
+                </li>
+                <li>
+                    <span class="hot-num">05</span>
+                    <a href="#" class="hot-link">大学城跨校选修课攻略</a>
+                </li>
+            </ul>
+
+            <h3 class="sidebar-title" style="margin-top: 30px;">便民服务</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <a href="#" style="display: block; padding: 10px; background: #f8f9fa; border-radius: 4px; font-size: 14px; text-align: center;">校园网报修入口</a>
+                <a href="#" style="display: block; padding: 10px; background: #f8f9fa; border-radius: 4px; font-size: 14px; text-align: center;">校园二手交易市场</a>
+                <a href="#" style="display: block; padding: 10px; background: #f8f9fa; border-radius: 4px; font-size: 14px; text-align: center;">失物招领中心</a>
+            </div>
+        </aside>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>关于长清大学城</h3>
+                    <p style="font-size: 14px; line-height: 1.6; color: #bdc3c7;">
+                        长清大学城是济南市重要的高等教育聚集区，汇聚了多所知名高校。本站致力于为师生及周边居民提供便捷的生活服务与信息查询。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="#">高校名单</a></li>
+                        <li><a href="#">周边地图</a></li>
+                        <li><a href="#">交通时刻表</a></li>
+                        <li><a href="#">商家入驻</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li>合作咨询：contact@changqing-edu.com</li>
+                        <li>投稿建议：editor@changqing-edu.com</li>
+                        <li>地址：山东省济南市长清区大学科技园</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 长清大学城服务平台. All Rights Reserved. 仅供信息展示参考，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                              </html>
