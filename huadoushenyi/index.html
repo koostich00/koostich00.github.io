@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都神医下载-经典都市神医小说在线阅读与资源中心</title>
+    <meta name="description" content="花都神医下载资源站提供经典都市神医题材小说的在线阅读、章节试读及正版授权下载服务。收录神医下山、悬壶济世等热门剧情，支持多终端阅读，更新及时，体验流畅。">
+    <meta name="keywords" content="花都神医下载,小说下载,都市神医,在线阅读,小说资源">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 8px;
+        }
+
+        .search-bar input {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .book-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-cover {
+            width: 100%;
+            height: 320px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .card-author {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-card {
+            flex: 1;
+            padding: 8px;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .btn-read {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-download {
+            background-color: #e0e0e0;
+            color: var(--text-main);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            margin: 10px 0 8px;
+            color: var(--primary-color);
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            padding-left: 24px;
+            display: none;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .search-bar {
+                width: 100%;
+            }
+            .search-bar input {
+                flex: 1;
+            }
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="#" class="logo">
+            <span>📚</span> 小说资源库
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">分类浏览</a></li>
+                <li><a href="#">排行榜</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索书名或作者...">
+            <button>搜索</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>花都神医下载</h1>
+    <p>汇集海量都市神医题材小说资源，提供极速下载与流畅阅读体验。从医术高强到都市传奇，满足您对神医题材的所有想象。</p>
+    <div class="cta-buttons">
+        <a href="#download" class="btn btn-primary">立即下载</a>
+        <a href="#read" class="btn btn-secondary">在线试读</a>
+    </div>
+</section>
+
+<main>
+    <!-- Feature Highlights -->
+    <section class="features">
+        <div class="feature-item">
+            <div style="font-size: 2rem;">⚡</div>
+            <h3>极速下载</h3>
+            <p>多线路源码，秒速下载，支持断点续传。</p>
+        </div>
+        <div class="feature-item">
+            <div style="font-size: 2rem;">📱</div>
+            <h3>全端适配</h3>
+            <p>手机、平板、电脑均可完美阅读。</p>
+        </div>
+        <div class="feature-item">
+            <div style="font-size: 2rem;">🔒</div>
+            <h3>安全无毒</h3>
+            <p>经过严格安全扫描，保障下载安全。</p>
+        </div>
+        <div class="feature-item">
+            <div style="font-size: 2rem;">📖</div>
+            <h3>海量资源</h3>
+            <p>涵盖各类热门小说，更新及时。</p>
+        </div>
+    </section>
+
+    <!-- Featured Books -->
+    <section id="download">
+        <div class="section-title">
+            <h2>热门神医小说推荐</h2>
+            <a href="#" style="font-size: 0.9rem; color: var(--accent-color);">查看更多 &rarr;</a>
+        </div>
+        <div class="grid-container">
+            <!-- Book 1 -->
+            <article class="book-card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/med1/300/400" alt="花都神医封面">
+                    <span class="card-tag">都市</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">花都神医：绝世高手</h3>
+                    <p class="card-author">作者：逍遥散人</p>
+                    <p class="card-desc">落魄青年林峰偶得上古医术，从此混迹花都。妙手回春，惩恶扬善，开启一段波澜壮阔的都市传奇。</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-card btn-read">在线阅读</a>
+                        <a href="#" class="btn-card btn-download">下载TXT</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Book 2 -->
+            <article class="book-card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/med2/300/400" alt="神医下山封面">
+                    <span class="card-tag">玄幻</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">神医下山：开局娶个校花</h3>
+                    <p class="card-author">作者：大漠孤烟</p>
+                    <p class="card-desc">顶级医圣隐居三年下山，入赘豪门。面对家族冷眼与豪门恩怨，他如何用医术碾压一切敌人？</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-card btn-read">在线阅读</a>
+                        <a href="#" class="btn-card btn-download">下载TXT</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Book 3 -->
+            <article class="book-card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/med3/300/400" alt="王牌神医封面">
+                    <span class="card-tag">都市</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">王牌神医在都市</h3>
+                    <p class="card-author">作者：夜色微凉</p>
+                    <p class="card-desc">拥有透视眼和神医术的叶辰，回到都市。治病救人，顺便泡个妞，这该死的节奏，真让人上瘾。</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-card btn-read">在线阅读</a>
+                        <a href="#" class="btn-card btn-download">下载TXT</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Book 4 -->
+            <article class="book-card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/med4/300/400" alt="最强神医封面">
+                    <span class="card-tag">历史</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">最强神医：回到古代</h3>
+                    <p class="card-author">作者：穿越者</p>
+                    <p class="card-desc">现代神医意外穿越大周王朝，凭借一身医术在朝堂与江湖中叱咤风云，定国安邦。</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-card btn-read">在线阅读</a>
+                        <a href="#" class="btn-card btn-download">下载TXT</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Download Guide -->
+    <section id="read">
+        <div class="section-title">
+            <h2>如何下载与阅读</h2>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+            <p style="margin-bottom: 15px;">想要获取《花都神医》及相关神医小说的电子版？请按照以下步骤操作：</p>
+            <ol style="margin-left: 20px; margin-bottom: 15px; color: var(--text-secondary);">
+                <li style="margin-bottom: 8px;">在上方搜索框输入书名或点击“下载TXT”按钮。</li>
+                <li style="margin-bottom: 8px;">选择您需要的版本（TXT、EPUB、PDF）。</li>
+                <li style="margin-bottom: 8px;">确认下载链接有效后，点击下载即可。</li>
+                <li>下载完成后，您可以使用手机自带的阅读器或电脑软件打开。</li>
+            </ol>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">温馨提示：部分小说受版权保护，请支持正版阅读。</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-title">
+            <h2>常见问题 (FAQ)</h2>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">花都神医下载需要付费吗？</div>
+            <div class="faq-answer">本站提供的小说下载资源大多为免费分享，部分书籍可能需要完成简单的验证任务。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">下载的小说格式支持哪些？</div>
+            <div class="faq-answer">目前主要提供TXT（纯文本）格式，兼容性最好，适合绝大多数阅读器。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">小说内容是否完整？</div>
+            <div class="faq-answer">我们尽量确保上传内容的完整性，如发现章节缺失，欢迎在评论区反馈。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">如何联系网站管理？</div>
+            <div class="faq-answer">您可以通过页面底部的邮箱或在线表单与我们取得联系。</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于我们</h4>
+            <ul>
+                <li><a href="#">网站简介</a></li>
+                <li><a href="#">版权声明</a></li>
+                <li><a href="#">免责声明</a></li>
+                <li><a href="#">联系方式</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>热门分类</h4>
+            <ul>
+                <li><a href="#">都市神医</a></li>
+                <li><a href="#">玄幻修真</a></li>
+                <li><a href="#">历史军事</a></li>
+                <li><a href="#">科幻末世</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>友情链接</h4>
+            <ul>
+                <li><a href="#">起点中文网</a></li>
+                <li><a href="#">纵横中文网</a></li>
+                <li><a href="#">飞卢小说网</a></li>
+                <li><a href="#">晋江文学城</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 小说资源库. All Rights Reserved. 本站仅提供资源索引与分享，内容版权归原作者所有。
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<script>
+    // Simple FAQ Toggle Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>
