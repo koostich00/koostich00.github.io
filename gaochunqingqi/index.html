@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高纯氢气-工业级氢气供应解决方案与安全应用指南</title>
+    <meta name="description" content="专业提供高纯氢气、99.999%超纯氢气及99.99%高纯氢气。涵盖氢气应用场景、气体纯度标准、安全存储运输及工业配套设备，致力于为半导体、光伏、科研及精密制造提供稳定可靠的气体供应方案。">
+    <meta name="keywords" content="高纯氢气, 超纯氢气, 氢气纯度, 工业氢气, 氢气供应, 氢气应用, 高纯气体">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #00a8e8;
+            --accent-color: #00c4cc;
+            --text-dark: #1a1a1a;
+            --text-gray: #555555;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e1e4e8;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .cta-btn:hover {
+            background-color: #004494;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e0f7fa 100%);
+            padding: 5rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(0, 168, 232, 0.1);
+            color: var(--secondary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 86, 179, 0.15);
+        }
+
+        /* Specs Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .spec-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        .spec-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-label {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* Applications Section */
+        .applications {
+            background-color: var(--bg-white);
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .app-item {
+            background: var(--bg-light);
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .app-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--secondary-color);
+        }
+
+        .app-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .app-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-desc {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Technical Info */
+        .technical {
+            background-color: #f4f6f9;
+        }
+
+        .tech-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .tech-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .check-icon {
+            min-width: 24px;
+            height: 24px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            margin-top: 2px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .tech-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-content p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        /* Safety Section */
+        .safety {
+            background: linear-gradient(to right, #0056b3, #003d80);
+            color: white;
+        }
+
+        .safety .section-title, .safety .section-subtitle {
+            color: white;
+        }
+
+        .safety .section-subtitle {
+            opacity: 0.8;
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .safety-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .safety-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .safety-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content, .tech-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .app-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .specs-grid {
+                margin-top: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin: 1rem 0;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>◆</span> 氢气云工
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#applications">应用领域</a></li>
+                    <li><a href="#specs">气体规格</a></li>
+                    <li><a href="#safety">安全指南</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">获取报价</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="hero-tags">
+                        <span class="tag">99.999% 高纯</span>
+                        <span class="tag">定制化方案</span>
+                        <span class="tag">安全配送</span>
+                    </div>
+                    <h1>高纯氢气<br>精密制造的核心动力</h1>
+                    <p>提供从99.99%至99.9999%的高纯氢气供应服务。我们专注于半导体、光伏、科研及高端制造领域的气体需求，确保每一瓶气体都符合严格的工业标准。</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#contact" class="cta-btn" style="padding: 0.8rem 2rem; font-size: 1rem;">立即咨询</a>
+                        <a href="#specs" style="padding: 0.8rem 2rem; border: 1px solid var(--primary-color); color: var(--primary-color); border-radius: 4px; font-weight: 600;">查看规格表</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/hydrogen_tech/600/400" alt="工业级高纯氢气瓶与气体供应系统示意图" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- Specs Grid -->
+        <div class="container">
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-value">99.999%</div>
+                    <div class="spec-label">5N 高纯氢气</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-value">99.9999%</div>
+                    <div class="spec-label">6N 超纯氢气</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-value">&lt;1ppm</div>
+                    <div class="spec-label">杂质含量控制</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-value">0.1% O₂</div>
+                    <div class="spec-label">氧含量标准</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Applications -->
+        <section id="applications" class="section applications">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">广泛的应用领域</h2>
+                    <p class="section-subtitle">高纯氢气凭借其优良的还原性和高能量密度，是现代工业不可或缺的原料。</p>
+                </div>
+                <div class="app-grid">
+                    <div class="app-item">
+                        <div class="app-icon">⚛</div>
+                        <h3 class="app-title">半导体制造</h3>
+                        <p class="app-desc">用于CVD外延生长、扩散工艺及退火处理，对纯度要求极高。</p>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-icon">☀</div>
+                        <h3 class="app-title">光伏产业</h3>
+                        <p class="app-desc">硅片还原、切割清洗及PECVD镀膜工艺中的关键反应气体。</p>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-icon">🔬</div>
+                        <h3 class="app-title">科研与实验室</h3>
+                        <p class="app-desc">材料合成、光谱分析、燃料电池测试及基础化学研究。</p>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-icon">🚗</div>
+                        <h3 class="app-title">氢燃料电池</h3>
+                        <p class="app-desc">作为燃料电池发电的还原剂，推动绿色能源转型。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Info -->
+        <section id="specs" class="section technical">
+            <div class="container tech-container">
+                <div class="tech-content">
+                    <h3>严格的纯度控制体系</h3>
+                    <p>我们采用先进的提纯技术与严苛的检测流程，确保每一批次的高纯氢气都能满足不同行业的苛刻要求。</p>
+                    <ul class="tech-list">
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <strong>多级精馏与吸附</strong>
+                                <p style="color:var(--text-gray); font-size:0.9rem; margin-top:4px;">结合分子筛吸附与低温精馏技术，有效去除氢气中的微量杂质。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <strong>实时在线监测</strong>
+                                <p style="color:var(--text-gray); font-size:0.9rem; margin-top:4px;">生产及充装过程中全程在线监测，确保氧含量、氮含量等关键指标达标。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <strong>专用瓶组供应</strong>
+                                <p style="color:var(--text-gray); font-size:0.9rem; margin-top:4px;">提供高纯度专用气瓶及杜瓦瓶供应服务，杜绝交叉污染。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tech-image">
+                    <img src="https://picsum.photos/seed/gas_tech/600/450" alt="高纯氢气纯度检测设备与气体分析实验室" style="width:100%; border-radius:8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Section -->
+        <section id="safety" class="section safety">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">安全存储与使用规范</h2>
+                    <p class="section-subtitle">氢气易燃易爆，正确操作是保障生产安全的前提。</p>
+                </div>
+                <div class="safety-grid">
+                    <div class="safety-card">
+                        <h3>🛡️ 防爆与防火</h3>
+                        <p>氢气燃烧范围极宽（4%-75%），严禁在易燃易爆场所使用明火。储气区域必须配备防爆电气设备，并保持良好的通风系统。</p>
+                    </div>
+                    <div class="safety-card">
+                        <h3>🚫 防泄漏检测</h3>
+                        <p>定期检查气瓶阀门、减压阀及连接管路。建议安装氢气泄漏报警器，一旦检测到泄漏应立即关闭总阀并启动排风。</p>
+                    </div>
+                    <div class="safety-card">
+                        <h3>🧰 专用设备</h3>
+                        <p>必须使用经过防爆认证的氢气专用减压阀和管道。严禁使用普通氧气减压阀代替，以防发生化学反应导致爆炸。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题解答</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <details style="margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                        <summary style="font-weight: 600; cursor: pointer; color: var(--text-dark);">高纯氢气和普通氢气有什么区别？</summary>
+                        <p style="margin-top: 0.5rem; color: var(--text-gray);">高纯氢气（如5N、6N）的杂质含量极低，通常指氢气纯度在99.999%以上。普通工业氢气纯度较低，杂质多，主要用于合成氨、冶金还原等对纯度要求不高的场景。高纯氢气主要用于半导体、光伏等精密制造工艺。</p>
+                    </details>
+                    <details style="margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                        <summary style="font-weight: 600; cursor: pointer; color: var(--text-dark);">氢气瓶的颜色标识是什么？</summary>
+                        <p style="margin-top: 0.5rem; color: var(--text-gray);">根据国家标准，盛装高纯氢气的气瓶通常为灰色，并标有“氢气”字样及红色字样。请务必注意区分，防止误用。</p>
+                    </details>
+                    <details style="margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                        <summary style="font-weight: 600; cursor: pointer; color: var(--text-dark);">如何确保运输过程中的安全？</summary>
+                        <p style="margin-top: 0.5rem; color: var(--text-gray)；">我们使用符合法规的专用气瓶运输车辆，并在运输前对气瓶进行固定和检查。车辆配备灭火器和防爆工具，司机持有相关特种作业操作证。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>氢气云工</h2>
+                    <p>专注于高纯气体供应解决方案，致力于为工业用户提供安全、稳定、高纯度的气体产品与服务。我们以严谨的态度和专业的技术，成为您值得信赖的合作伙伴。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">产品中心</a></li>
+                        <li><a href="#">气体百科</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>应用领域</h4>
+                    <ul>
+                        <li><a href="#">半导体</a></li>
+                        <li><a href="#">光伏产业</a></li>
+                        <li><a href="#">科研实验室</a></li>
+                        <li><a href="#">燃料电池</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：sales@hydrogencloud.com</li>
+                        <li>地址：工业开发区气体大道88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 氢气云工 版权所有 | 仅供演示参考</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
