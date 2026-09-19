@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="海鸣馆官网 - 专注传统文化与古典美学研究，提供书画艺术鉴赏、古籍修复知识、古典家具展示及国学文化资讯。">
+    <meta name="keywords" content="海鸣馆官网, 传统文化, 书画鉴赏, 古籍修复, 国学文化">
+    <title>海鸣馆官网-传统文化与古典美学鉴赏平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5d4037;
+            --secondary-color: #8d6e63;
+            --accent-color: #d7ccc8;
+            --bg-color: #fdfbf7;
+            --text-main: #3e2723;
+            --text-light: #795548;
+            --white: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "SimSun", serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+            border-left: 1px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/ancientart/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #3e2723;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* 通用区块样式 */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 关于我们 */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .about-image img {
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 核心业务 */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 展览与资讯 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 20px;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            align-items: flex-start;
+            border: 1px solid #eee;
+        }
+
+        .news-date {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 70px;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .news-date .month {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .news-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .news-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .sidebar {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #f5f5f5;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            transition: background 0.3s;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* 预约与联系 */
+        .contact-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .contact-section h2, .contact-section p {
+            color: var(--white);
+        }
+
+        .contact-section .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            color: var(--text-main);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #3e2723;
+            color: rgba(255,255,255,0.7);
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                padding: 20px 0;
+                background-color: var(--white);
+                border-top: 1px solid #eee;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-grid, .news-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .news-date {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            .news-date .day {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                海鸣馆
+                <span>传统文化鉴赏平台</span>
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#about">海鸣馆简介</a></li>
+                    <li><a href="#services">核心业务</a></li>
+                    <li><a href="#gallery">艺术鉴赏</a></li>
+                    <li><a href="#contact">预约参观</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>寻访古韵，传承经典</h1>
+                <p>海鸣馆致力于中国传统书画艺术、古籍修复技艺及古典家具文化的保护与推广。在这里，感受历史的温度，品味艺术的永恒。</p>
+                <div>
+                    <a href="#services" class="btn">探索馆藏</a>
+                    <a href="#contact" class="btn btn-outline">预约导览</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container">
+            <div class="section-header">
+                <h2>关于海鸣馆</h2>
+                <p>一座连接过去与未来的文化桥梁，我们以严谨的态度守护中华瑰宝。</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>文化使命</h3>
+                    <p>海鸣馆成立于2010年，坐落于历史文化名城。作为一家非营利性的传统文化研究机构，我们不仅致力于收集、整理和研究珍贵的文物，更注重通过现代传播手段让传统文化焕发新生。</p>
+                    <p>馆内设有书画鉴赏区、古籍修复工坊和古典家具展厅，常年举办各类艺术讲座、修复技艺演示及文化交流活动。</p>
+                    <p>我们的核心理念是“守护、传承、创新”，希望通过每一次的展览与交流，让更多人了解并爱上中国传统文化。</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/inkpainting/600/400.jpg" alt="海鸣馆内景">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" style="background-color: #fafafa;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心业务与服务</h2>
+                    <p>全方位的传统文化服务，满足您的鉴赏与收藏需求。</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3>书画鉴赏</h3>
+                        <p>提供专业的书画作品鉴定、估价及收藏咨询服务。专家团队拥有丰富的实战经验，助您慧眼识珠。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">📜</div>
+                        <h3>古籍修复</h3>
+                        <p>采用传统“金镶玉”技艺与现代科技相结合的方法，对破损古籍、书法作品进行抢救性修复。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🪑</div>
+                        <h3>古典家具</h3>
+                        <p>展示明清时期及近现代古典家具精品，提供家具鉴赏、保养知识及古董家具置换服务。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🎓</div>
+                        <h3>国学教育</h3>
+                        <p>开设书法、国画、茶艺等传统文化课程，面向青少年及成人提供系统性的传统文化教育。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery & News Section -->
+        <section id="gallery" class="container">
+            <div class="section-header">
+                <h2>最新动态与展览</h2>
+                <p>关注海鸣馆的最新活动、展览资讯及修复案例。</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-list">
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">15</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h4>“墨韵千秋”——秋季书画特展即将开展</h4>
+                            <p>本次特展汇集了海鸣馆珍藏的近五十幅明清书画真迹，包括山水、花鸟、人物等多个门类，带您领略传统笔墨的无限魅力。</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">08</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h4>古籍修复工作坊：体验“金缮”之美</h4>
+                            <p>本周末，海鸣馆特邀资深修复师现场演示古籍修复流程，并开放部分体验环节，欢迎广大书法爱好者报名参与。</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">01</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h4>海鸣馆秋季开放时间调整通知</h4>
+                            <p>为配合“墨韵千秋”特展的筹备工作，馆内部分区域将于10月1日至10月15日进行临时闭馆维护。</p>
+                        </div>
+                    </article>
+                </div>
+                <aside class="sidebar">
+                    <h3>热门标签</h3>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag">书法</a>
+                        <a href="#" class="tag">国画</a>
+                        <a href="#" class="tag">古籍修复</a>
+                        <a href="#" class="tag">明清家具</a>
+                        <a href="#" class="tag">金石篆刻</a>
+                        <a href="#" class="tag">茶文化</a>
+                        <a href="#" class="tag">非遗传承</a>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <h3>馆内公告</h3>
+                        <ul style="font-size: 0.9rem; color: var(--text-light); line-height: 1.8;">
+                            <li>• 请勿携带闪光灯进入展厅</li>
+                            <li>• 馆内禁止饮食及吸烟</li>
+                            <li>• 青少年需在成人陪同下参观</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>预约参观与咨询</h2>
+                    <p>欢迎团体参观及商务合作，请填写下方表单或直接联系我们。</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>联系方式</h3>
+                        <p style="margin-bottom: 20px; opacity: 0.9;">海鸣馆期待您的光临，我们将为您提供专业的讲解服务。</p>
+                        <ul>
+                            <li>📍 地址：中国·某市历史文化街区88号</li>
+                            <li>📞 电话：010-1234-5678</li>
+                            <li>✉️ 邮箱：contact@haimingguan.cn</li>
+                            <li>⏰ 开放时间：周二至周日 9:00 - 17:00</li>
+                        </ul>
+                    </div>
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('感谢您的留言，海鸣馆工作人员将尽快与您联系。');">
+                        <div class="form-group">
+                            <label for="name">您的姓名</label>
+                            <input type="text" id="name" placeholder="请输入姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">联系电话</label>
+                            <input type="tel" id="phone" placeholder="请输入联系电话" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言内容</label>
+                            <textarea id="message" rows="4" placeholder="请描述您的需求，如团体预约、商务合作等" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">提交留言</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>海鸣馆</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">致力于中国传统文化的保护、研究与传播，打造高端文化鉴赏与交流平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#services">服务项目</a></li>
+                        <li><a href="#gallery">展览资讯</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">书画鉴定</a></li>
+                        <li><a href="#">古籍修复</a></li>
+                        <li><a href="#">古董家具</a></li>
+                        <li><a href="#">国学培训</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 海鸣馆 版权所有 | 传统文化鉴赏平台</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        function toggleMenu() {
+            const navList = document.getElementById('nav-list');
+            navList.classList.toggle('show');
+        }
+
+        // 点击导航链接后自动收起菜单（移动端体验优化）
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navList = document.getElementById('nav-list');
+                if (navList.classList.contains('show')) {
+                    navList.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+                          </html>
