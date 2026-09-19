@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="董校长歌曲专题页，收录董校长经典歌曲作品、演唱视频、歌词大全及粉丝讨论。提供最全的董校长音乐资源与背景介绍。">
+    <meta name="keywords" content="董校长歌曲,董校长,歌曲,音乐,视频,歌词">
+    <title>董校长歌曲-经典音乐作品与演唱视频大全</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-color: #2d3436;
+            --light-color: #f7f9fc;
+            --text-color: #636e72;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 4rem 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .search-box button {
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-box button:hover {
+            background-color: #ff5252;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.6rem;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .view-all:hover {
+            text-decoration: underline;
+        }
+
+        /* Song List Grid */
+        .song-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .song-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .song-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-img-placeholder {
+            height: 160px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .song-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .song-artist {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .song-meta {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: #f1f2f6;
+            color: var(--text-color);
+        }
+
+        .tag.hot {
+            background-color: #fff0f0;
+            color: var(--primary-color);
+        }
+
+        /* Video Section */
+        .video-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .video-player-container {
+            background: #000;
+            aspect-ratio: 16/9;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+        
+        .video-player-container::after {
+            content: '▶ 播放演示视频';
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .video-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .video-item {
+            background: var(--white);
+            padding: 10px;
+            border-radius: var(--border-radius);
+            display: flex;
+            gap: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .video-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .video-thumb {
+            width: 100px;
+            height: 60px;
+            background-color: #ddd;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .video-info span {
+            font-size: 0.8rem;
+            color: var(--text-color);
+        }
+
+        /* About & Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        .profile-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-role {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-bio {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+
+        .stat-item span {
+            font-size: 0.8rem;
+            color: var(--text-color);
+        }
+
+        .info-content h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .info-content p {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            text-align: justify;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: #b2bec3;
+            padding: 3rem 20px;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .video-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .song-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                董校长歌曲
+            </a>
+            <nav class="nav-links">
+                <a href="#songs">歌曲列表</a>
+                <a href="#videos">演唱视频</a>
+                <a href="#about">艺人简介</a>
+                <a href="#download">下载专区</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>聆听董校长的经典旋律</h1>
+            <p>汇集全网最全董校长歌曲资源，包含热门金曲、独家现场及高清MV。发现属于你的音乐记忆。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索歌曲名、专辑...">
+                <button type="button">搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 热门歌曲推荐 -->
+        <section id="songs">
+            <div class="section-header">
+                <h2 class="section-title">热门歌曲推荐</h2>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+            <div class="song-grid">
+                <article class="song-card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/music1/400/300" alt="歌曲封面">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="song-title">岁月如歌</h3>
+                        <p class="song-artist">董校长</p>
+                        <div class="song-meta">
+                            <span class="tag hot">热门</span>
+                            <span class="tag">流行</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="song-card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/music2/400/300" alt="歌曲封面">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="song-title">青春纪念册</h3>
+                        <p class="song-artist">董校长</p>
+                        <div class="song-meta">
+                            <span class="tag">怀旧</span>
+                            <span class="tag">经典</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="song-card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/music3/400/300" alt="歌曲封面">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="song-title">城市之光</h3>
+                        <p class="song-artist">董校长</p>
+                        <div class="song-meta">
+                            <span class="tag">摇滚</span>
+                            <span class="tag">原创</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="song-card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/music4/400/300" alt="歌曲封面">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="song-title">梦开始的地方</h3>
+                        <p class="song-artist">董校长</p>
+                        <div class="song-meta">
+                            <span class="tag">民谣</span>
+                            <span class="tag">治愈</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 演唱视频专区 -->
+        <section id="videos">
+            <div class="section-header">
+                <h2 class="section-title">精选演唱视频</h2>
+                <a href="#" class="view-all">观看更多视频 &rarr;</a>
+            </div>
+            <div class="video-layout">
+                <div class="video-player-container">
+                    <!-- 模拟视频播放器 -->
+                </div>
+                <div class="video-list">
+                    <div class="video-item">
+                        <div class="video-thumb">
+                            <img src="https://picsum.photos/seed/vid1/160/100" alt="封面">
+                        </div>
+                        <div class="video-info">
+                            <h4>2023巡回演唱会现场版</h4>
+                            <span>1.2万次播放</span>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumb">
+                            <img src="https://picsum.photos/seed/vid2/160/100" alt="封面">
+                        </div>
+                        <div class="video-info">
+                            <h4>董校长访谈：谈音乐创作</h4>
+                            <span>8千次播放</span>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumb">
+                            <img src="https://picsum.photos/seed/vid3/160/100" alt="封面">
+                        </div>
+                        <div class="video-info">
+                            <h4>新年特别直播录音棚直录</h4>
+                            <span>5千次播放</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 艺人简介 -->
+        <section id="about">
+            <div class="section-header">
+                <h2 class="section-title">关于董校长</h2>
+            </div>
+            <div class="info-grid">
+                <aside class="profile-card">
+                    <div class="avatar">
+                        <img src="https://picsum.photos/seed/artist/200/200" alt="董校长头像">
+                    </div>
+                    <h3 class="profile-name">董校长</h3>
+                    <p class="profile-role">知名音乐人 / 创作歌手</p>
+                    <p class="profile-bio">以独特的嗓音和深情的演绎风格著称，擅长将流行元素与经典旋律融合，深受广大乐迷喜爱。</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <strong>50+</strong>
+                            <span>发行歌曲</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>1000万+</strong>
+                            <span>全网播放</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>50万+</strong>
+                            <span>粉丝</span>
+                        </div>
+                    </div>
+                </aside>
+                <div class="info-content">
+                    <h3>音乐生涯与风格</h3>
+                    <p>董校长作为当代备受瞩目的音乐人，自出道以来一直致力于原创音乐的发展。他的作品涵盖流行、摇滚、民谣等多种风格，每一首歌曲都倾注了他对生活的感悟和对艺术的追求。</p>
+                    <h3>主要成就</h3>
+                    <p>近年来，董校长发布了多张广受好评的专辑，并在各大音乐榜单上取得了优异成绩。他不仅是一位优秀的歌手，同时也是一位才华横溢的词曲创作者，坚持用自己的方式讲述故事。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 歌词下载 -->
+        <section id="download">
+            <div class="section-header">
+                <h2 class="section-title">歌词与下载</h2>
+            </div>
+            <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                <p style="margin-bottom: 1rem;">您可以在此浏览董校长歌曲的歌词文本，或通过合法渠道下载正版音源。</p>
+                <ul style="border-top: 1px solid #eee; padding-top: 1rem;">
+                    <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                        <span>岁月如歌 (完整版)</span>
+                        <a href="#" style="color: var(--primary-color);">查看歌词</a>
+                    </li>
+                    <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                        <span>城市之光 (Live版)</span>
+                        <a href="#" style="color: var(--primary-color);">查看歌词</a>
+                    </li>
+                    <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                        <span>梦开始的地方 (钢琴版)</span>
+                        <a href="#" style="color: var(--primary-color);">查看歌词</a>
+                    </li>
+                </ul>
+                <div style="margin-top: 1.5rem; text-align: center; color: var(--text-color); font-size: 0.9rem;">
+                    * 请支持正版音乐，尊重创作者版权。
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源导航</h4>
+                <ul>
+                    <li><a href="#">歌曲库</a></li>
+                    <li><a href="#">MV专区</a></li>
+                    <li><a href="#">歌词大全</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p style="font-size: 0.9rem; line-height: 1.8;">
+                    微博: @董校长歌曲<br>
+                    抖音: 董校长官方<br>
+                    邮箱: support@dongmusic.com
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 董校长歌曲网. All Rights Reserved. 本站仅为资源索引展示，不提供文件存储服务。</p>
+        </div>
+    </footer>
+
+</body>
+                          </html>
